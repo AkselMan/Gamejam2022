@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Stats")]
-    public float speed;
-    public float upForce;
-    public float idleForce;
-    public float downForce;
+    [Range(0, 5f)] public float speed = 1.5f;
+    [Range(0, 750f)] public float upForce = 100f;
+    [Range(0, 250f)] public float idleForce = 50f;
+    [Range(0, -500f)] public float downForce = -200f;
     [Space]
     [Header("Movement Settings")]
     [Range(0, .3f)] public float m_MovementSmoothing = .05f;
@@ -17,15 +18,42 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
     [Space]
     [Header("Misc")]
-    public PhysicsMaterial2D nonStickMat;
-    public PhysicsMaterial2D stickyMat;
+    public Transform wallCheck;
+    public float wallCheckRadius;
+    public LayerMask whatIsGrabable;
+    public bool isWallGrabbing;
     public Vector2 m_input;
-    int dir = 0;
+
+    [Header("Events")]
+    [Space]
+
+    public UnityEvent OnWallGrabEvent;
+
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
+
+    public void FixedUpdate()
+    {
+        bool wasWallGrabbing = isWallGrabbing;
+        isWallGrabbing = false;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position, wallCheckRadius, whatIsGrabable);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                if (m_input.x < 0 && !m_FacingRight || m_input.x > 0 && m_FacingRight) {
+                    isWallGrabbing = true;
+                    if (!wasWallGrabbing)
+                        OnWallGrabEvent.Invoke();
+                }
+            }
+        }
+    }
+
 
     public void Update()
     {
@@ -51,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Idle Force
         m_Rigidbody2D.AddForce(idleForce * Vector2.up * Time.deltaTime, ForceMode2D.Force);
+
 
 
         //Flip
