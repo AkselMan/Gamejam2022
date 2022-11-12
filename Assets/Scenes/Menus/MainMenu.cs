@@ -20,6 +20,8 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    
+
     public void QuitGame()
     {
         Application.Quit();
@@ -35,6 +37,18 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
 
+    }
+
+    void Start()
+    {
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
 

@@ -16,7 +16,7 @@ public class OptionsMenu : MonoBehaviour
     {
         
         FindObjectOfType<AudioManager>().Play("Click");
-        Invoke("loadScene", 0.255f);
+        Invoke("LoadScene", 0.255f);
     }
 
 

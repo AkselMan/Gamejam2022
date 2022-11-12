@@ -377,19 +377,51 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
-      propertyPath: sounds.Array.data[1].clip
+      propertyPath: sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 8f5fce18904aaec45bfe3895fe667117, type: 3}
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
-      propertyPath: sounds.Array.data[1].name
+      propertyPath: sounds.Array.data[0].name
       value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27a9818c807ccde4280da92ee3f4f478, type: 3}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: MenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27a9818c807ccde4280da92ee3f4f478, type: 3}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: MenuMusic
       objectReference: {fileID: 0}
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
       propertyPath: sounds.Array.data[1].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
       propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[2].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1601158065471112331, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
@@ -485,7 +517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652d8a9dbe017fc46b578e90afbb8343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VolumeSlider: {fileID: 3680113776850534457}
   audioMixer: {fileID: 24100000, guid: a5a19c534d5b9d249af70186e44d5091, type: 2}
   audioManager: {fileID: 1763454052}
 --- !u!114 &1763454052 stripped
@@ -654,20 +685,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1751306179}
+    - target: {fileID: 3680113777036774454, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3680113777233165220, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1751306179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
---- !u!114 &3680113776850534457 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3680113776121758031, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
-  m_PrefabInstance: {fileID: 3680113776850534456}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
