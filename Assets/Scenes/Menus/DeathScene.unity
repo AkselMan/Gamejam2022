@@ -933,7 +933,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
       propertyPath: sounds.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
       propertyPath: sounds.Array.data[2].clip
@@ -944,8 +944,16 @@ PrefabInstance:
       value: DarkClick
       objectReference: {fileID: 0}
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
       propertyPath: sounds.Array.data[2].pitch
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1601158065471112330, guid: 5036f7740a6868d4aaee90705477d097, type: 3}
       propertyPath: sounds.Array.data[2].volume

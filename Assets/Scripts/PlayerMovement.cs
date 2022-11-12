@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGrabable;
     public bool isWallGrabbing;
     public Vector2 m_input;
+    public GameObject gunArm;
 
     [Header("Events")]
     [Space]
@@ -64,7 +65,22 @@ public class PlayerMovement : MonoBehaviour
         m_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Move(m_input);
 
-        animator.SetFloat("speed", Mathf.Abs(m_Rigidbody2D.velocity.x));
+        animator.SetFloat("speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+        animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
+        animator.SetBool("isGrabbing", isWallGrabbing);
+
+        if (isWallGrabbing)
+        {
+            gunArm.SetActive(true);
+        } else
+        {
+            gunArm.SetActive(false);
+        }
+    }
+
+    public void Shoot()
+    {
+
     }
 
     public void Move(Vector2 move)
