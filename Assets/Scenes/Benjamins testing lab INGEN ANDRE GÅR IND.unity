@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 1336583259}
   - component: {fileID: 1336583260}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: SkyboxExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,12 +385,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec53eef50abe3847b61549d3d727972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 2
-  acceleration: 0
-  maxSpeed: Infinity
-  speed: 0
-  parallaxEffect: 0.5
-  background: {fileID: 1336583258}
+  parallaxObjects:
+  - name: Skybox
+    obj: {fileID: 1336583258}
+    parallaxEffect: 0.5
+    initSpeed: {x: 0, y: 2}
+    acceleration: {x: 0, y: 0}
+    maxSpeed: {x: Infinity, y: Infinity}
+    speed: {x: 0, y: 0}
+    size: {x: 18, y: 10}
+    offset: {x: 0, y: 0}
+    loopX: 1
+    loopY: 1
+  - name: Cloud
+    obj: {fileID: 1825209549}
+    parallaxEffect: 0.8
+    initSpeed: {x: -5, y: 10}
+    acceleration: {x: 0, y: 0}
+    maxSpeed: {x: Infinity, y: Infinity}
+    speed: {x: 0, y: 0}
+    size: {x: 20, y: 12}
+    offset: {x: 3, y: 4}
+    loopX: 1
+    loopY: 1
 --- !u!1818360608 &1548837238
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -5215,3 +5232,85 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1825209549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1825209551}
+  - component: {fileID: 1825209550}
+  m_Layer: 0
+  m_Name: CloudExample
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1825209550
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825209549}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1825209551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825209549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 4, z: 0}
+  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
