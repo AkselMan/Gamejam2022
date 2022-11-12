@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public Animator animator;
+
     [Header("Movement Stats")]
     [Range(0, 5f)] public float speed = 1.5f;
     [Range(0, 750f)] public float upForce = 100f;
@@ -60,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
         //Input
         m_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Move(m_input);
+
+        animator.SetFloat("speed", Mathf.Abs(m_Rigidbody2D.velocity.x));
     }
 
     public void Move(Vector2 move)
