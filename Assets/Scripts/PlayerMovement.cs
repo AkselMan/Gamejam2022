@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Stats")]
     public float speed;
-    public float fallGravityScale;
-    public float idleGravityScale;
-    public float risingGravityScale;
+    public float upForce;
+    public float idleForce;
+    public float downForce;
     [Space]
     [Header("Movement Settings")]
     [Range(0, .3f)] public float m_MovementSmoothing = .05f;
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
+        //Input
         m_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Move(m_input);
     }
@@ -38,31 +39,26 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetVelocity = new Vector2(move.x * speed, m_Rigidbody2D.velocity.y);
         m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-        if (move.x > 0 && !m_FacingRight)
-        {
-            // ... flip the player.
+        //Up and Down force
+        if (move.y > 0.1f) {
+            //Move Down
+            m_Rigidbody2D.AddForce(move.y * upForce * Vector2.up * Time.deltaTime, ForceMode2D.Force);
+        } else if (move.y < -0.1f) {
+            //Move Up
+            m_Rigidbody2D.AddForce(move.y * downForce * Vector2.down * Time.deltaTime, ForceMode2D.Force);
+
+        } 
+
+        //Idle Force
+        m_Rigidbody2D.AddForce(idleForce * Vector2.up * Time.deltaTime, ForceMode2D.Force);
+
+
+        //Flip
+        if (move.x > 0 && !m_FacingRight) {
+            Flip();
+        } else if (move.x < 0 && m_FacingRight) {
             Flip();
         }
-        // Otherwise if the input is moving the player left and the player is facing right...
-        else if (move.x < 0 && m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
-
-        if (move.y < -0.1f) {
-            dir = -1;
-            m_Rigidbody2D.gravityScale = fallGravityScale;
-        }
-        else if ( move.y > 0.1) {
-            dir = 1;
-            m_Rigidbody2D.gravityScale = risingGravityScale;
-            
-        } else {
-            dir = 0;
-            m_Rigidbody2D.gravityScale = idleGravityScale;
-        }
-
     }
 
     private void Flip()
