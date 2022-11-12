@@ -189,6 +189,7 @@ MonoBehaviour:
     m_Bits: 64
   isWallGrabbing: 0
   m_input: {x: 0, y: 0}
+  gunArm: {fileID: 0}
   OnWallGrabEvent:
     m_PersistentCalls:
       m_Calls: []
