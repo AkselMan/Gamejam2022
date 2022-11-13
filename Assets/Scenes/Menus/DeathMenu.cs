@@ -15,12 +15,12 @@ public class DeathMenu : MonoBehaviour
     // Start is called before the first frame update
 
 
-    SpriteRenderer rend;
+
 
 
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("DarkClick");
+        FindObjectOfType<Audiomanager>().Play("DarkClick");
     }
 
 
