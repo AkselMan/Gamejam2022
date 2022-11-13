@@ -20,7 +20,11 @@ TagManager:
   - Enemy
   - Player
   - Enemy bullet
+<<<<<<< Updated upstream
   - PlayerTrigger
+=======
+  - ParachutePickup
+>>>>>>> Stashed changes
   - 
   - 
   - 

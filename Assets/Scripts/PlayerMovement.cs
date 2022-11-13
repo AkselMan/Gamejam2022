@@ -181,6 +181,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Death()
     {
+        Debug.Log("death");
         m_Rigidbody2D.freezeRotation = false;
         m_Rigidbody2D.AddForce(2000f * Vector2.down);
         death = true;
