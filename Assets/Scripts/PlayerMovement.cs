@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,13 +29,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGrabable;
     public bool isWallGrabbing;
     public Vector2 m_input;
-    public GameObject gunArm;
 
     [Header("Events")]
     [Space]
 
     public UnityEvent OnWallGrabEvent;
 
+
+    bool death = false;
 
     private void Awake()
     {
@@ -41,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (death)
+            return;
+
         bool wasWallGrabbing = isWallGrabbing;
         isWallGrabbing = false;
 
@@ -61,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
+        if (death)
+            return;
         //Input
         m_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Move(m_input);
@@ -68,19 +77,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
         animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
         animator.SetBool("isGrabbing", isWallGrabbing);
-
-        if (isWallGrabbing)
-        {
-            gunArm.SetActive(true);
-        } else
-        {
-            gunArm.SetActive(false);
-        }
-    }
-
-    public void Shoot()
-    {
-
     }
 
     public void Move(Vector2 move)
@@ -120,5 +116,19 @@ public class PlayerMovement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    public void Death()
+    {
+        m_Rigidbody2D.freezeRotation = false;
+        m_Rigidbody2D.AddForce(-1000f * Vector2.down);
+        death = true;
+        Time.timeScale = 0.5f;
+        Invoke("LoadDeathScene", 5f);
+    }
+
+    public void LoadDeathScene()
+    {
+        SceneManager.LoadScene("DeathScene");
     }
 }
