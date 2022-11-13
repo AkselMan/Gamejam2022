@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGrabable;
     public bool isWallGrabbing;
     public Vector2 m_input;
+    public AudioSource windSounds;
 
     [Header("Events")]
     [Space]
@@ -77,6 +78,14 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
         animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
         animator.SetBool("isGrabbing", isWallGrabbing);
+
+        if (!isWallGrabbing)
+        {
+            windSounds.volume = 0.25f;
+        } else
+        {
+            windSounds.volume = 0.15f;
+        }
     }
 
     public void Move(Vector2 move)
@@ -121,10 +130,11 @@ public class PlayerMovement : MonoBehaviour
     public void Death()
     {
         m_Rigidbody2D.freezeRotation = false;
-        m_Rigidbody2D.AddForce(-1000f * Vector2.down);
+        m_Rigidbody2D.AddForce(2000f * Vector2.down);
         death = true;
         Time.timeScale = 0.5f;
-        Invoke("LoadDeathScene", 5f);
+        Invoke("LoadDeathScene", 2f);
+        FindObjectOfType<Audiomanager>().Play("death");
     }
 
     public void LoadDeathScene()
