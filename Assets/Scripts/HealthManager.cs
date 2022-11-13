@@ -65,7 +65,7 @@ public class HealthManager : MonoBehaviour
 
     public void Death()
     {
-        if (EnemySpawnerDecrease) EnemySpawner.Instance.aliveEnemies--;
+        if (EnemySpawnerDecrease && EnemySpawner.Instance) EnemySpawner.Instance.aliveEnemies--;
         deathEvent.Invoke();
     }
 
