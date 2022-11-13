@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 
@@ -122,5 +123,12 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody2D.freezeRotation = false;
         m_Rigidbody2D.AddForce(-1000f * Vector2.down);
         death = true;
+        Time.timeScale = 0.5f;
+        Invoke("LoadDeathScene", 5f);
+    }
+
+    public void LoadDeathScene()
+    {
+        SceneManager.LoadScene("DeathScene");
     }
 }
