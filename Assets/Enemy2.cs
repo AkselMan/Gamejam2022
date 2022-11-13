@@ -95,7 +95,7 @@ public class Enemy2 : MonoBehaviour
     {
         FindObjectOfType<Audiomanager>().Play("explosion");
         Instantiate(explosion, transform.position, Quaternion.identity);
-        Instantiate(parachute, transform.position, Quaternion.identity);
+        Instantiate(parachute, new Vector3(0,0,0), Quaternion.identity);
         Destroy(gameObject);
     }
 }
