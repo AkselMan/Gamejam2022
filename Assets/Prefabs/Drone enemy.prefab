@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1325907150952298364}
   - component: {fileID: 1325907150952298305}
   - component: {fileID: 1499271240}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Drone enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
   moveBlocker:
     serializedVersion: 2
     m_Bits: 64
-  projectile: {fileID: 5343832845408941943, guid: 34de9f4ad8aeb3e40a200219bde49128, type: 3}
+  projectile: {fileID: 5343832845408941943, guid: 405ddab1d4a682e4a9bd164391e633c1, type: 3}
   firePoint: {fileID: 5331739185884984567}
   waitTimeShoot: 3.5
   gunGFX: {fileID: 5331739184178767353}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5331739184178767335}
   - component: {fileID: 5331739184178767352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5331739185884984567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
