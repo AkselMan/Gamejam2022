@@ -13,10 +13,17 @@ TagManager:
   - Water
   - UI
   - Box
+<<<<<<< Updated upstream
   - Text
   - 
   - 
   - 
+=======
+  - Bullet
+  - Enemy
+  - Player
+  - Death Trgiger
+>>>>>>> Stashed changes
   - 
   - 
   - 

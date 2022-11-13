@@ -7,5 +7,6 @@ public class DeathTrigger : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         print("DEAD");
+        FindObjectOfType<PlayerMovement>().Death();
     }
 }
