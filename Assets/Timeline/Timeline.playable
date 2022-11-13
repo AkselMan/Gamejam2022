@@ -3051,6 +3051,7 @@ MonoBehaviour:
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &-7397347221031361489
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3082,13 +3083,20 @@ MonoBehaviour:
 =======
 --- !u!74 &4110935483807227052
 >>>>>>> parent of b661999 (Scene)
+=======
+--- !u!74 &4110935483807227052
+>>>>>>> parent of b661999 (Scene)
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Name: Recorded (1)
+=======
+  m_Name: Recorded (6)
+>>>>>>> parent of b661999 (Scene)
 =======
   m_Name: Recorded (6)
 >>>>>>> parent of b661999 (Scene)
@@ -3099,11 +3107,14 @@ AnimationClip:
   m_RotationCurves: []
   m_CompressedRotationCurves: []
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_EulerCurves: []
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves:
 =======
+=======
+>>>>>>> parent of b661999 (Scene)
   m_EulerCurves:
 >>>>>>> parent of b661999 (Scene)
   - curve:
@@ -4906,6 +4917,7 @@ MonoBehaviour:
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!74 &-987350938261400982
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -5847,6 +5859,8 @@ MonoBehaviour:
   m_ApplyOffsets: 0
 --- !u!114 &6809825601378546928
 =======
+=======
+>>>>>>> parent of b661999 (Scene)
 --- !u!114 &8085464662801309767
 >>>>>>> parent of b661999 (Scene)
 MonoBehaviour:
@@ -5885,12 +5899,19 @@ MonoBehaviour:
   m_AvatarMask: {fileID: 0}
   m_ApplyAvatarMask: 1
   m_TrackOffset: 0
+<<<<<<< HEAD
   m_InfiniteClip: {fileID: -7225509519354944263}
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
 <<<<<<< HEAD
 =======
+=======
+  m_InfiniteClip: {fileID: 8998827734377621278}
+  m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ApplyOffsets: 0
+>>>>>>> parent of b661999 (Scene)
 --- !u!74 &8998827734377621278
 AnimationClip:
   m_ObjectHideFlags: 0
