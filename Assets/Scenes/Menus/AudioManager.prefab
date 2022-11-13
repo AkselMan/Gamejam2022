@@ -56,4 +56,16 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  mixer: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 91734769faf301143b1f5ee0e6fac33f, type: 3}
+    name: Laser
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 27a9818c807ccde4280da92ee3f4f478, type: 3}
+    name: MainMenu
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  mixer: {fileID: 24300002, guid: a5a19c534d5b9d249af70186e44d5091, type: 2}

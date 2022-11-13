@@ -21,6 +21,7 @@ public class DeathMenu : MonoBehaviour
     void Start()
     {
         FindObjectOfType<Audiomanager>().Play("DarkClick");
+        Invoke("BackToMenu", 5f);
     }
 
 
