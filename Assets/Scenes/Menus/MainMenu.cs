@@ -8,13 +8,13 @@ public class MainMenu : MonoBehaviour
     public void GameScene()
     {
         
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<Audiomanager>().Play("Click");
         Invoke("LoadGameScene", 0.255f);
     }
 
     public void OptionsScene()
     {
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<Audiomanager>().Play("Click");
         Invoke("LoadOptionsScene", 0.255f);
         
 
@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<Audiomanager>().Play("Click");
     }
 
     public void LoadOptionsScene()
@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("TestGameScene");
 
     }
 

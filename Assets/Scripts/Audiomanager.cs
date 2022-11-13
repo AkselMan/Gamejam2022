@@ -6,7 +6,7 @@ using System;
 
 
 
-public class AudioManager : MonoBehaviour
+public class Audiomanager : MonoBehaviour
 {
 
     public Sound[] sounds;
@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer mixer;
 
 
-    public static AudioManager instance;
+    public static Audiomanager instance;
 
     void Awake()
     {

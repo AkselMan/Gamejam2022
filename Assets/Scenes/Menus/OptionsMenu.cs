@@ -15,14 +15,14 @@ public class OptionsMenu : MonoBehaviour
     public void BackButton()
     {
         
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<Audiomanager>().Play("Click");
         Invoke("LoadScene", 0.255f);
     }
 
 
 
     public AudioMixer audioMixer;
-    public AudioManager audioManager;
+    public Audiomanager audioManager;
 
 
 
@@ -36,7 +36,7 @@ public class OptionsMenu : MonoBehaviour
     public void SetQuality (int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<Audiomanager>().Play("Click");
     }
 
 
