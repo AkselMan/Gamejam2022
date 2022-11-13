@@ -27,7 +27,7 @@ public class Enemy2 : MonoBehaviour
         Vector3 diff = player.position - transform.position;
         diff.Normalize();
 
-        transform.position = player.position + (Vector3)DroneMovement.Rotate(transform.position - player.position, rotateSpeed * Time.fixedDeltaTime);
+        transform.position = player.position + (Vector3)DroneMovement.Rotate((transform.position - player.position).normalized * 3, rotateSpeed * Time.fixedDeltaTime);
 
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
@@ -93,7 +93,7 @@ public class Enemy2 : MonoBehaviour
     }
     public void Death()
     {
-        FindObjectOfType<Audiomanager>().Play("explosion");
+        FindObjectOfType<Audiomanager>()?.Play("explosion");
         Instantiate(explosion, transform.position, Quaternion.identity);
         Instantiate(parachute, new Vector3(0,0,0), Quaternion.identity);
         Destroy(gameObject);
