@@ -4,7 +4,8 @@ using UnityEngine;
 public enum EnemyType
 {
     drone = 0,
-    grabbingGunner = 1
+    grabbingGunner = 1,
+    boss = 2
 }
 [System.Serializable]
 public class Wave

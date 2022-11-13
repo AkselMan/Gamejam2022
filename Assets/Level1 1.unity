@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &104626876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,6 +892,9 @@ MonoBehaviour:
   - name: Drone
     prefab: {fileID: 1325907150952298307, guid: 5a1f2004b7c6ffe4eb4f7cae81fac04d, type: 3}
     type: 0
+  - name: Boss
+    prefab: {fileID: 0}
+    type: 2
   minSpawnPos: {x: -5, y: 5}
   maxSpawnPos: {x: 5, y: 6}
   waves:
@@ -899,6 +902,7 @@ MonoBehaviour:
   - enemies: 0000000000000000
   - enemies: 000000000000000000000000
   - enemies: 0000000000000000000000000000000000000000
+  - enemies: 02000000
   currentWave: 0
   aliveEnemies: 0
 --- !u!4 &1524706326
