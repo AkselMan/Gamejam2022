@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         
-        
+        FindObjectOfType<Audiomanager>().Play("MainMenu");
         
             
             
