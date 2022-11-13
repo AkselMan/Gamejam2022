@@ -6,6 +6,7 @@ public class ProjectileMovement : MonoBehaviour
 {
     public float speed;
     public float damage;
+    public bool enemyBullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,10 @@ public class ProjectileMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && !enemyBullet)
+        {
+            collision.GetComponent<HealthManager>().takeDamage(damage);
+        }else if (collision.CompareTag("Player") && enemyBullet)
         {
             collision.GetComponent<HealthManager>().takeDamage(damage);
         }
