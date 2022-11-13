@@ -165,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         shootEffect.Play();
+        FindObjectOfType<Audiomanager>().Play("hitHurt");
         Destroy(Instantiate(projectile, firePoint.position, firePoint.rotation), 20);
     }
 
