@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
         
         FindObjectOfType<Audiomanager>().Play("Click");
         Invoke("LoadGameScene", 0.255f);
+        
     }
 
     public void OptionsScene()
