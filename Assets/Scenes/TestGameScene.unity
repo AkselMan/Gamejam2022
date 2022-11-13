@@ -242,7 +242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 329447675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ab99a14a76fc0d47962c1e04f17448c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b3645d61cef4ce489518008ca52a59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &329447677
@@ -443,8 +443,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 329447676}
-        m_TargetAssemblyTypeName: Die, Assembly-CSharp
-        m_MethodName: die
+        m_TargetAssemblyTypeName: die, Assembly-CSharp
+        m_MethodName: death
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
