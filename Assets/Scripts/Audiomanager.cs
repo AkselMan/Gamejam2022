@@ -22,7 +22,7 @@ public class Audiomanager : MonoBehaviour
         
     }
 
-    public AudioMixer mixer;
+    public AudioMixerGroup mixer;
 
 
     public static Audiomanager instance;
@@ -51,6 +51,9 @@ public class Audiomanager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = mixer;
+            bool SFX = true;
+
         }
 
 

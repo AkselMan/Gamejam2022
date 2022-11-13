@@ -521,6 +521,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3680113776121758029, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
+      propertyPath: m_Name
+      value: MusicSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680113776121758030, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 113.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3680113776121758031, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
       propertyPath: m_Value
       value: 0
@@ -560,6 +568,24 @@ PrefabInstance:
     - target: {fileID: 3680113776210624770, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680113776905162385, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
+      propertyPath: m_Name
+      value: Music Vol
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680113776905162386, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680113776905162386, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680113776905162387, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
+      propertyPath: m_text
+      value: 'Music Volume
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3680113777036774454, guid: 1b3ab698d986fab47b240698aa7f258f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -637,6 +663,34 @@ PrefabInstance:
     - target: {fileID: 6731530435799056986, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731530435799056987, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: a5a19c534d5b9d249af70186e44d5091, type: 2}
+    - target: {fileID: 6731530435799056987, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731530435799056987, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f5fce18904aaec45bfe3895fe667117, type: 3}
+    - target: {fileID: 6731530435799056987, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731530435799056987, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: DarkClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731530435799056987, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731530435799056987, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce1c64a47ceb2cf47930d0e36b5aaf8b, type: 3}
