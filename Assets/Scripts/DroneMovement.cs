@@ -26,6 +26,7 @@ public class DroneMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerMovement>().transform;
         target = transform.position;
     }
     private void OnDrawGizmosSelected()

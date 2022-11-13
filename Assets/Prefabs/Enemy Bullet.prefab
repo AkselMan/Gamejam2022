@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5343832845408941940}
   - component: {fileID: 5343832845408941941}
   - component: {fileID: 5343832845408941942}
-  m_Layer: 8
-  m_Name: Bullet
+  m_Layer: 11
+  m_Name: Enemy Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc949552ebc12246bc73ed04a404ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   damage: 1
 --- !u!61 &5343832845408941942
 BoxCollider2D:

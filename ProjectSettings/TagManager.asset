@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Box
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,10 +16,10 @@ TagManager:
   - UI
   - Box
   - Text
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Enemy
+  - Player
+  - Enemy bullet
   - 
   - 
   - 
