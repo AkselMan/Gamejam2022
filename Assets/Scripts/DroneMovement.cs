@@ -109,8 +109,8 @@ public class DroneMovement : MonoBehaviour
     public void Death()
     {
 
-        FindObjectOfType<CameraShaker>().ShakeOnce(3f, 3f, 1f, 1f);
-        FindObjectOfType<Audiomanager>().Play("Explotion");
+        FindObjectOfType<CameraShaker>()?.ShakeOnce(3f, 3f, 1f, 1f);
+        FindObjectOfType<Audiomanager>()?.Play("explosion");
         Instantiate(explosionfx, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
