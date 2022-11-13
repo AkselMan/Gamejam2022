@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -26,24 +28,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGrabable;
     public bool isWallGrabbing;
     public Vector2 m_input;
-    [Space]
-    [Header("Shooting")]
-    public GameObject gunArm;
-    public Transform firePoint;
-    private bool aiming;
-    private float gunArmRot;
-    public float gunArmRotSpeed = 45;
-    public GameObject projectile;
-    public ParticleSystem shootEffect;
-    public float waitTimeShoot = 2;
-    float nextShoot;
-    public GameObject reloadAnim;
 
     [Header("Events")]
     [Space]
 
     public UnityEvent OnWallGrabEvent;
 
+
+    bool death = false;
 
     private void Awake()
     {
@@ -52,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (death)
+            return;
+
         bool wasWallGrabbing = isWallGrabbing;
         isWallGrabbing = false;
 
@@ -72,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
+        if (death)
+            return;
         //Input
         m_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Move(m_input);
@@ -79,47 +76,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
         animator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
         animator.SetBool("isGrabbing", isWallGrabbing);
-
-        if (isWallGrabbing)
-        {
-            gunArm.SetActive(true);
-            gunArm.transform.localScale = new Vector3(m_FacingRight ? 1 : -1, m_FacingRight ? -1 : 1, gunArm.transform.localScale.z);
-            if (aiming && Input.GetMouseButtonUp(0) && Time.time > nextShoot)
-            {
-                nextShoot = Time.time + waitTimeShoot;
-
-                aiming = false;
-                Shoot();
-            }
-            aiming = Input.GetMouseButton(0);
-            reloadAnim.SetActive(Time.time <= nextShoot);
-            if (aiming)
-            {
-                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 aimDir = mousePos - (Vector2)transform.position;
-                gunArmRot = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
-                
-            }else
-            {
-                gunArmRot = -90;
-            }
-
-            gunArm.transform.rotation = Quaternion.Lerp(gunArm.transform.rotation, Quaternion.Euler(0, 0, gunArmRot), gunArmRotSpeed * Time.deltaTime / Quaternion.Angle(Quaternion.Euler(0, 0, gunArmRot), gunArm.transform.rotation));
-        } else
-        {
-            aiming = false;
-            gunArm.SetActive(false);
-        }
-
-        
-
-
-    }
-
-    public void Shoot()
-    {
-        shootEffect.Play();
-        Destroy(Instantiate(projectile, firePoint.position, firePoint.rotation), 20);
     }
 
     public void Move(Vector2 move)
@@ -159,5 +115,12 @@ public class PlayerMovement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    public void Death()
+    {
+        m_Rigidbody2D.freezeRotation = false;
+        m_Rigidbody2D.AddForce(-1000f * Vector2.down);
+        death = true;
     }
 }

@@ -21,6 +21,8 @@ public class DroneMovement : MonoBehaviour
     private float nextShoot = 0;
     private bool lastReach;
     public GameObject gunGFX;
+
+    public GameObject explosionfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,13 +71,13 @@ public class DroneMovement : MonoBehaviour
             lastReach = false;
         }
     }
-    public void Move() //bevæger den i intervaler
+    public void Move() //bev?ger den i intervaler
     {
         RaycastHit2D hit = new RaycastHit2D();
         bool hasDir = false;
         Vector2 dir = Vector2.zero;
         bool inReach = Vector2.Distance(player.position, transform.position) <= attackReach;
-        for (int i = 0; i < 10; i++) //hvis nu den ikke kan bevæge sig nogen steder, så skal vi ligesom ikke have et crash
+        for (int i = 0; i < 10; i++) //hvis nu den ikke kan bev?ge sig nogen steder, s? skal vi ligesom ikke have et crash
         {
             if (inReach) dir = Random.onUnitSphere;
             else dir = Rotate(player.position - transform.position, Random.Range(-30f, 30f)).normalized;
@@ -100,5 +102,11 @@ public class DroneMovement : MonoBehaviour
         v.x = (cos * tx) - (sin * ty);
         v.y = (sin * tx) + (cos * ty);
         return v;
+    }
+
+    public void Death()
+    {
+        Instantiate(explosionfx, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
