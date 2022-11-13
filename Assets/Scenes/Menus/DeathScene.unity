@@ -404,7 +404,6 @@ GameObject:
   - component: {fileID: 571274101}
   - component: {fileID: 571274103}
   - component: {fileID: 571274102}
-  - component: {fileID: 571274104}
   m_Layer: 5
   m_Name: DeathText
   m_TagString: Untagged
@@ -428,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 120, y: 100}
+  m_AnchoredPosition: {x: 115, y: 100}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &571274102
@@ -451,7 +450,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU FELL
+  m_text: 'DEATH
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af811b0470a6434d884468169a1a367, type: 2}
   m_sharedMaterial: {fileID: 6297759803288892700, guid: 9af811b0470a6434d884468169a1a367, type: 2}
@@ -514,7 +515,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -173.56525, y: 0, z: 0, w: 0}
+  m_margin: {x: -106.75232, y: 0, z: -6.363159, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -528,18 +529,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571274100}
   m_CullTransparentMesh: 1
---- !u!114 &571274104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571274100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57936c0449be57146804bac3a79de7b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &619208592
 GameObject:
   m_ObjectHideFlags: 0
