@@ -17,6 +17,7 @@ public class HealthManager : MonoBehaviour
     private Material origMaterial;
 
     public bool hitEventOnDeath = true; //hvis man skal lave hit hvis man dør
+    public bool EnemySpawnerDecrease = false;
 
     private SpriteRenderer sr;
 
@@ -48,13 +49,12 @@ public class HealthManager : MonoBehaviour
         }
         StartCoroutine(whiteFlash(0.1f));
 
-        SendMessage("OnHit");
         hitEvent.Invoke();
     }
 
     public void Death()
     {
-        SendMessage("OnDeath");
+        if (EnemySpawnerDecrease) EnemySpawner.Instance.aliveEnemies--;
         deathEvent.Invoke();
     }
 
