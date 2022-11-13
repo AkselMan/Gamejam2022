@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 public enum DamageType
 {
     player = 0,
@@ -11,6 +12,7 @@ public enum DamageType
 public class HealthManager : MonoBehaviour
 {
     public float health, maxHealth;
+    public Slider healthSlider;
 
     public UnityEvent hitEvent, deathEvent;
     public Material whiteMaterial; //sejt materiale til at lave et hvidt flash ved skade
@@ -26,12 +28,18 @@ public class HealthManager : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         origMaterial = sr.sharedMaterial;
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = health;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //if (Input.GetMouseButtonDown(0)) takeDamage(1);
+
     }
 
     public void takeDamage(float damage = 1)
@@ -41,11 +49,14 @@ public class HealthManager : MonoBehaviour
         {
             if (hitEventOnDeath)
             {
-                SendMessage("OnHit");
                 hitEvent.Invoke();
             }
             Death();
             if (!hitEventOnDeath) return;
+        }
+        if (healthSlider != null)
+        {
+            healthSlider.value = health;
         }
         StartCoroutine(whiteFlash(0.1f));
 
